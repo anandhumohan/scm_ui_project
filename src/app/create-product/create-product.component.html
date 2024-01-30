@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="form" (submit)="createProduct()">
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Product Name</mat-label>
+        <input matInput type="text" [(ngModel)]="newProduct.name" name="name" required>
+      </mat-form-field>
+      <div class="gap"></div> <!-- Add a gap between fields -->
+      <mat-form-field class="form-field">
+        <mat-label>Product Description</mat-label>
+        <textarea matInput [(ngModel)]="newProduct.description" name="description" required></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Product Price</mat-label>
+        <input matInput type="number" [(ngModel)]="newProduct.price" name="price" required>
+      </mat-form-field>
+    </div>
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit">Create</button>
+    </div>
+  </form>
+</div>

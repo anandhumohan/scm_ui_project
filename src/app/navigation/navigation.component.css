@@ -1,0 +1,16 @@
+.text-button {
+  background: none; /* Removes background */
+  border: none; /* Removes border */
+  box-shadow: none; /* Removes shadow */
+  color: white; /* Adjust the color to match your toolbar's color scheme */
+}
+
+/* Ensure the toolbar items are aligned correctly */
+.mat-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

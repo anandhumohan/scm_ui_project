@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <span>SCM Project</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="beforeMenu" class="text-button">Menu</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item routerLink="/products">Product</button>
+  </mat-menu>
+</mat-toolbar>
+
