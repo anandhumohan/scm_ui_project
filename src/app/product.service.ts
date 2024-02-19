@@ -16,7 +16,7 @@ export class ProductService {
     return client.get<Product[]>("http://localhost:8084/api/product");
   }
 
-  createProduct(newProduct: Product) {
-
+  createProduct(newProduct: Product, httpClient: HttpClient): Observable<Product> {
+    return httpClient.post<Product>("http://localhost:8084/api/product", newProduct);
   }
 }
