@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import {Product} from "./model/product.model";
+import {Observable} from "rxjs";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-  private products: Product[] = [
-    { id: 1, name: 'Product 1', description: 'Description 1', price: 100 },
-    { id: 2, name: 'Product 2', description: 'Description 2', price: 200 },
-    // Add more mock products
-  ];
+  private products: Product[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
-  getProducts(): Product[] {
-    return this.products;
+  getProducts(client: HttpClient): Observable<Product[]> {
+    return client.get<Product[]>("http://localhost:8084/api/product");
   }
 
   createProduct(newProduct: Product) {
-    
+
   }
 }
