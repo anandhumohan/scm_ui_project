@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductService } from '../product.service';
 import {CommonModule} from "@angular/common";
-import { Router } from '@angular/router';
-import { HttpClientModule,  } from '@angular/common/http';
+import { NavigationExtras, Router} from '@angular/router';
+import {HttpClientModule,} from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 
 import {
@@ -25,10 +25,11 @@ import {MatIcon} from "@angular/material/icon";
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductService, private router: Router, private httpClient: HttpClient) {}
+  constructor(private productService: ProductService, private router: Router, private httpClient: HttpClient) {
+  }
 
   ngOnInit(): void {
     console.log('Component initialized');
@@ -44,6 +45,10 @@ export class ProductListComponent implements OnInit{
 
   navigateToCreateProduct() {
     this.router.navigate(['/create-product']);
+  }
+
+  navigateToUpdateProduct(productId: number) {
+    this.router.navigate(['/product-update',productId]);
   }
 }
 

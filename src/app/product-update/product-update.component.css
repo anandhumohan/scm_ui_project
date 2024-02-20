@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-form {
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add spacing between rows */
+}
+
+.form-field {
+  flex: 1; /* Take up available space */
+  margin-right: 10px; /* Add spacing between fields */
+}
+
+.gap {
+  width: 20px; /* Adjust the width of the gap */
+}
+
+.button-row {
+  text-align: center;
+}

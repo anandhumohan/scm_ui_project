@@ -19,4 +19,12 @@ export class ProductService {
   createProduct(newProduct: Product, httpClient: HttpClient): Observable<Product> {
     return httpClient.post<Product>("http://localhost:8084/api/product", newProduct);
   }
+
+  updateService(newProduct: Product, httpClient: HttpClient) {
+    return httpClient.put<Product>("http://localhost:8084/api/product/{newProduct.id}", newProduct);
+  }
+
+  getProductById(productId: number, httpClient: HttpClient): Observable<Product> {
+    return httpClient.get<Product>(`http://localhost:8084/api/product/${productId}`);
+  }
 }
