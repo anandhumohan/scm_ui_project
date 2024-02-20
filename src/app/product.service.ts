@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   updateService(newProduct: Product, httpClient: HttpClient) {
-    return httpClient.put<Product>("http://localhost:8084/api/product/{newProduct.id}", newProduct);
+    return httpClient.put<Product>("http://localhost:8084/api/product", newProduct);
   }
 
   getProductById(productId: number, httpClient: HttpClient): Observable<Product> {
